@@ -13,10 +13,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     void LateUpdate() {
-        Rotate();
+        RotatePlayer();
     }
 
-    void Rotate() {
+    void RotatePlayer() {
         // get mouse input
         float x = Input.GetAxis("Mouse X") * rotSpeed * Time.deltaTime;
         float y = Input.GetAxis("Mouse Y") * rotSpeed * Time.deltaTime;
