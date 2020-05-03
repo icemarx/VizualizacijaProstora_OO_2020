@@ -7,6 +7,7 @@ public abstract class Room
 {
     // CONSTANTS
     public readonly float EDGE_SIZE = 5;
+    public float angle;
 
     // ATTRIBUTES
     public PlayerController pc = GameObject.Find("Main Camera").GetComponent<PlayerController>();
@@ -33,7 +34,7 @@ public abstract class Room
                     Vector3 spawnLocation = location + exit_dir[i] *
                         (CalculateHalfDistanceMagnitude() + (new TriangleRoom()).CalculateHalfDistanceMagnitude());
 
-                    Neighbors[i] = new TriangleRoom(this, spawnLocation, rot_angle+i*90);    // TODO: fix starting rotation
+                    Neighbors[i] = new TriangleRoom(this, spawnLocation, rot_angle+i*angle);    // TODO: fix starting rotation
 
                 } else {                                        // square room
                     // calculate positon

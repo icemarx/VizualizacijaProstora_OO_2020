@@ -6,6 +6,7 @@ public class SquareRoom : Room {
     private readonly static int EDGE_NUMBER = 4;
 
     public SquareRoom() {
+        angle = 360 / EDGE_NUMBER;
 
         location = new Vector3(0,0,0);
         rot_angle = 0f;
@@ -22,6 +23,7 @@ public class SquareRoom : Room {
     }
 
     public SquareRoom(Room neighbor, Vector3 location, float rot_angle) {
+        angle = 360 / EDGE_NUMBER;
         Neighbors = new Room[EDGE_NUMBER];
         Neighbors[0] = neighbor;
 
