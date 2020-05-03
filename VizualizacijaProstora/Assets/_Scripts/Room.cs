@@ -18,7 +18,7 @@ public abstract class Room
     public bool isActive;
 
     protected Vector3[] exit_dir; // directional vectors pointing to the next room
-    protected Room[] Neighbors;
+    public Room[] Neighbors;
 
     // METHODS
     /// <summary>
@@ -68,7 +68,7 @@ public abstract class Room
     /// Hides the room, making it inactive
     /// </summary>
     private void Hide() {
-        model.SetActive(false);
+        // model.SetActive(false);
         room_go.SetActive(false);
         isActive = false;
     }

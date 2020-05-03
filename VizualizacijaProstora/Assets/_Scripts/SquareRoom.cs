@@ -30,8 +30,15 @@ public class SquareRoom : Room {
         this.location = location;
         this.rot_angle = rot_angle;
 
-        // exit_dir[0] = neighbor.room_go.transform.position - 
-        room_go = GameObject.Instantiate(pc.rooms[1], location, Quaternion.Euler(-90, rot_angle, 0));
+        exit_dir = new Vector3[EDGE_NUMBER];
+        exit_dir[0] = Vector3.Normalize(neighbor.room_go.transform.position - location);
+        for(int i = 1; i < EDGE_NUMBER; i++) {
+            exit_dir[i] = Vector3.Normalize(Quaternion.Euler(0, angle, 0) * exit_dir[i - 1]);
+        }
+
+        room_go = GameObject.Instantiate(pc.rooms[1], location, new Quaternion(0,0,0,0));
+        room_go.transform.LookAt(neighbor.room_go.transform);
+        room_go.transform.Rotate(new Vector3(1, 0, 0), -90);
 
         isActive = false;
     }

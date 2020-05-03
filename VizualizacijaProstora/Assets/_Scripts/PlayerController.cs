@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour {
     float xRotation = 0f;
     float yRotation = 0f;
 
-    private Room currentRoom; 
+    private Room currentRoom;
+    public GameObject cur_room_workaround;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -22,7 +23,25 @@ public class PlayerController : MonoBehaviour {
         currentRoom = new SquareRoom();
         currentRoom.room_go = GameObject.Instantiate(rooms[1], currentRoom.location, Quaternion.Euler(-90, 0, 0));
         currentRoom.Display();
+
+        // TODO: impove
+        cur_room_workaround = currentRoom.room_go;
+
         currentRoom.ShowNeighbors();
+    }
+
+    private void Update() {
+        // get new current room
+        if(currentRoom.room_go != cur_room_workaround) {
+            // find correct room
+            foreach(Room r in currentRoom.Neighbors) {
+                if(r.room_go == cur_room_workaround) {
+                    currentRoom = r;
+                    currentRoom.ShowNeighbors();
+                    break;
+                }
+            }
+        }
     }
 
     void LateUpdate() {
