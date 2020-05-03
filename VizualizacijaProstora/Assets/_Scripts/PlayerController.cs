@@ -30,6 +30,14 @@ public class PlayerController : MonoBehaviour {
         currentRoom.ShowNeighbors();
     }
 
+    private void OnCollisionEnter(Collision collision) {
+        Debug.Log("New room");
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log("Trigger");
+    }
+
     private void Update() {
         // get new current room
         if(currentRoom.room_go != cur_room_workaround) {
