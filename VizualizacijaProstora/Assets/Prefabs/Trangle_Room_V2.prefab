@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6784512501308543723}
   - component: {fileID: 6261213596037931016}
   - component: {fileID: -8630367838565588162}
+  - component: {fileID: 2782558445436451498}
+  - component: {fileID: 6325464571286063573}
   m_Layer: 0
   m_Name: Trangle_Room_V2
   m_TagString: Untagged
@@ -93,3 +95,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4579454407841743219, guid: 4b8287b340e0c0843abdf83eac6f31dd, type: 3}
+--- !u!65 &2782558445436451498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183711001939449640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00006433916, y: 0.006630418, z: 0.010000004}
+  m_Center: {x: -0.005741356, y: -0.006684785, z: 0.0050000013}
+--- !u!65 &6325464571286063573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183711001939449640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.000049980164, y: 0.0066878535, z: 0.010000004}
+  m_Center: {x: -0.00574854, y: 0.00665607, z: 0.005000001}

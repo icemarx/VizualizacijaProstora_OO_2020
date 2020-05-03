@@ -35,7 +35,7 @@ public class TriangleRoom : Room {
         // room_go.transform.Rotate(new Vector3(0,0,1), rot_angle);
         room_go.transform.LookAt(neighbor.room_go.transform);
         room_go.transform.Rotate(new Vector3(1,0,0), -90);
-        room_go.transform.Rotate(new Vector3(0,0,1), -30);
+        room_go.transform.Rotate(new Vector3(0,0,1), 90);
 
 
 
