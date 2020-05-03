@@ -8,12 +8,19 @@ public class PlayerController : MonoBehaviour {
     public float movSpeed;
 
     public CharacterController controller;
+    public GameObject[] rooms;
 
     float xRotation = 0f;
     float yRotation = 0f;
 
+    private Room currentRoom; 
+
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
+
+        // generate first room
+        currentRoom = new SquareRoom();
+        currentRoom.room_go = GameObject.Instantiate(rooms[1], currentRoom.location, Quaternion.Euler(-90,0,0));
     }
 
     void LateUpdate() {
