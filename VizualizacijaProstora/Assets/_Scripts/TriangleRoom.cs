@@ -24,7 +24,7 @@ public class TriangleRoom : Room {
         this.rot_angle = rot_angle;
 
         // exit_dir[0] = neighbor.room_go.transform.position - 
-        room_go = GameObject.Instantiate(pc.rooms[0], location, Quaternion.Euler(-90, 0, 0));
+        room_go = GameObject.Instantiate(pc.rooms[0], location, Quaternion.Euler(-90, rot_angle, 0));
 
         isActive = false;
     }
