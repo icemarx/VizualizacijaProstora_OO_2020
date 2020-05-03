@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour {
 
         // generate first room
         currentRoom = new SquareRoom();
-        currentRoom.room_go = GameObject.Instantiate(rooms[1], currentRoom.location, Quaternion.Euler(-90,0,0));
+        currentRoom.room_go = GameObject.Instantiate(rooms[1], currentRoom.location, Quaternion.Euler(-90, 0, 0));
+        currentRoom.Display();
+        currentRoom.ShowNeighbors();
     }
 
     void LateUpdate() {
