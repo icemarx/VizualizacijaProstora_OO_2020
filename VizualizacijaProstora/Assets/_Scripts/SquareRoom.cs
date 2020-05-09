@@ -19,7 +19,7 @@ public class SquareRoom : Room {
         };
         Neighbors = new Room[EDGE_NUMBER];
 
-        isActive = false;
+        isActive = true;
     }
 
     public SquareRoom(Room neighbor, Vector3 location, float rot_angle) {
@@ -40,7 +40,7 @@ public class SquareRoom : Room {
         room_go.transform.LookAt(neighbor.room_go.transform);
         room_go.transform.Rotate(new Vector3(1, 0, 0), -90);
 
-        isActive = false;
+        isActive = true;
     }
 
     /// <summary>

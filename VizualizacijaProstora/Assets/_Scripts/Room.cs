@@ -46,7 +46,7 @@ public abstract class Room
                 }
             }
 
-            if(Neighbors[i].isActive) {
+            if(!Neighbors[i].isActive) {
                 Neighbors[i].HideNeighborsExcept(this);
             } else {
                 Neighbors[i].Display();
@@ -58,7 +58,7 @@ public abstract class Room
     /// Hides all neighboring rooms except for the one provided 
     /// </summary>
     /// <param name="room"></param>
-    private void HideNeighborsExcept(Room room) {
+    public void HideNeighborsExcept(Room room) {
         foreach (Room r in Neighbors) {
             if (r != null && r.isActive && r != room) r.Hide();
         }

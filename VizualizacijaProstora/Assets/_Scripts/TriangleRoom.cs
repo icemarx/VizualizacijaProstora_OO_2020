@@ -14,7 +14,7 @@ public class TriangleRoom : Room {
         // };
         Neighbors = new Room[EDGE_NUMBER];
 
-        isActive = false;
+        isActive = true;
     }
 
     public TriangleRoom(Room neighbor, Vector3 location, float rot_angle) {
@@ -37,9 +37,7 @@ public class TriangleRoom : Room {
         room_go.transform.Rotate(new Vector3(1,0,0), -90);
         room_go.transform.Rotate(new Vector3(0,0,1), 90);
 
-
-
-        isActive = false;
+        isActive = true;
     }
 
     /// <summary>

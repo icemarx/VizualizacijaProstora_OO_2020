@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     float yRotation = 0f;
 
     private Room currentRoom;
+    private Room previousRoom;
     public GameObject cur_room_workaround;
 
     private void Start() {
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour {
         // TODO: impove
         cur_room_workaround = currentRoom.room_go;
 
-        currentRoom.ShowNeighbors();
+        // currentRoom.ShowNeighbors();
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -36,10 +37,29 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         Debug.Log("Trigger");
+        previousRoom = currentRoom;
+        foreach(Room r in currentRoom.Neighbors) {
+            if(r != null && r.room_go == other.gameObject) {
+                currentRoom = r;
+                break;
+            } 
+        }
+        currentRoom.ShowNeighbors();
+    }
+
+    private void OnTriggerExit(Collider other) {
+        Debug.Log("Trigger end");
+        if (currentRoom.room_go == other.gameObject) {
+            currentRoom.HideNeighborsExcept(previousRoom);
+            currentRoom = previousRoom;
+        } else {
+            previousRoom.HideNeighborsExcept(currentRoom);
+        }
     }
 
     private void Update() {
         // get new current room
+        /*
         if(currentRoom.room_go != cur_room_workaround) {
             // find correct room
             foreach(Room r in currentRoom.Neighbors) {
@@ -50,6 +70,7 @@ public class PlayerController : MonoBehaviour {
                 }
             }
         }
+        */
     }
 
     void LateUpdate() {
