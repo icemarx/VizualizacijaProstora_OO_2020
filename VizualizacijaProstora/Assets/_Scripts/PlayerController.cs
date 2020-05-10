@@ -37,24 +37,35 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         Debug.Log("Trigger");
-        previousRoom = currentRoom;
         foreach(Room r in currentRoom.Neighbors) {
             if(r != null && r.room_go == other.gameObject) {
+                if(previousRoom != r) {
+                    // previousRoom = currentRoom;
+                    //currentRoom = r;
+                } else {
+                    // back to previous room
+                    Debug.Log("Back to previous room");
+                    // currentRoom = previousRoom;
+                }
+                previousRoom = currentRoom;
                 currentRoom = r;
                 break;
-            } 
+            }
         }
         currentRoom.ShowNeighbors();
     }
 
     private void OnTriggerExit(Collider other) {
         Debug.Log("Trigger end");
+        /*
         if (currentRoom.room_go == other.gameObject) {
             currentRoom.HideNeighborsExcept(previousRoom);
             currentRoom = previousRoom;
         } else {
             previousRoom.HideNeighborsExcept(currentRoom);
         }
+        */
+        previousRoom.HideNeighborsExcept(currentRoom);
     }
 
     private void Update() {

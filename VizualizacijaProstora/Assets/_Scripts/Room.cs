@@ -47,10 +47,15 @@ public abstract class Room
             }
 
             if(!Neighbors[i].isActive) {
+                Neighbors[i].Display();
+            }
+            /*
+            if(!Neighbors[i].isActive) {
                 Neighbors[i].HideNeighborsExcept(this);
             } else {
                 Neighbors[i].Display();
             }
+            */
         }
     }
 
