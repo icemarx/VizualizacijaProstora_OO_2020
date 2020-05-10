@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour {
 
     private Room currentRoom;
     private Room previousRoom;
-    public GameObject cur_room_workaround;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -24,29 +23,12 @@ public class PlayerController : MonoBehaviour {
         currentRoom = new SquareRoom();
         currentRoom.room_go = GameObject.Instantiate(rooms[1], currentRoom.location, Quaternion.Euler(-90, 0, 0));
         currentRoom.Display();
-
-        // TODO: impove
-        cur_room_workaround = currentRoom.room_go;
-
-        // currentRoom.ShowNeighbors();
-    }
-
-    private void OnCollisionEnter(Collision collision) {
-        Debug.Log("New room");
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Trigger");
+        // Debug.Log("Trigger");
         foreach(Room r in currentRoom.Neighbors) {
             if(r != null && r.room_go == other.gameObject) {
-                if(previousRoom != r) {
-                    // previousRoom = currentRoom;
-                    //currentRoom = r;
-                } else {
-                    // back to previous room
-                    Debug.Log("Back to previous room");
-                    // currentRoom = previousRoom;
-                }
                 previousRoom = currentRoom;
                 currentRoom = r;
                 break;
@@ -56,32 +38,15 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerExit(Collider other) {
-        Debug.Log("Trigger end");
-        /*
+        // Debug.Log("Trigger end");
+        
         if (currentRoom.room_go == other.gameObject) {
-            currentRoom.HideNeighborsExcept(previousRoom);
+            Room r = currentRoom;
             currentRoom = previousRoom;
-        } else {
-            previousRoom.HideNeighborsExcept(currentRoom);
+            previousRoom = r;
         }
-        */
+        
         previousRoom.HideNeighborsExcept(currentRoom);
-    }
-
-    private void Update() {
-        // get new current room
-        /*
-        if(currentRoom.room_go != cur_room_workaround) {
-            // find correct room
-            foreach(Room r in currentRoom.Neighbors) {
-                if(r.room_go == cur_room_workaround) {
-                    currentRoom = r;
-                    currentRoom.ShowNeighbors();
-                    break;
-                }
-            }
-        }
-        */
     }
 
     void LateUpdate() {
