@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
         currentRoom.room_go = GameObject.Instantiate(rooms[1], currentRoom.location, Quaternion.Euler(-90, 0, 0));
         currentRoom.Display();
         Destroy(currentRoom.model);
+        currentRoom.model = null;
     }
 
     private void OnTriggerEnter(Collider other) {

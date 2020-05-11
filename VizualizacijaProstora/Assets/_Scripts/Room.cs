@@ -66,8 +66,9 @@ public abstract class Room
     /// Hides the room, making it inactive
     /// </summary>
     private void Hide() {
-        // model.SetActive(false);
         room_go.SetActive(false);
+        if (model != null) model.SetActive(false);
+
         isActive = false;
     }
 
@@ -76,7 +77,8 @@ public abstract class Room
     /// </summary>
     public void Display() {
         room_go.SetActive(true);
-        // model.SetActive(true);
+        if(model != null) model.SetActive(true);
+
         isActive = true;
     }
 
