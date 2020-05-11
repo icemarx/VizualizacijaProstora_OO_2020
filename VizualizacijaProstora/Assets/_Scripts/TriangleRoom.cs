@@ -38,6 +38,7 @@ public class TriangleRoom : Room {
         room_go.transform.Rotate(new Vector3(0,0,1), 90);
 
         isActive = true;
+        GenerateObject();
     }
 
     /// <summary>

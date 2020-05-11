@@ -85,4 +85,18 @@ public abstract class Room
     /// </summary>
     /// <returns>Distance based on the room type</returns>
     protected abstract float CalculateHalfDistanceMagnitude();
+
+    /// <summary>
+    /// Assigns a random object from the list to spawn in the room, as well as it's transform.
+    /// </summary>
+    protected void GenerateObject() {
+        // generate position
+        Vector3 pos = room_go.transform.position + new Vector3(0, 0.5f, 0);
+
+        // chose random object
+        GameObject go = pc.objects[UnityEngine.Random.Range(0, pc.objects.Length)];
+
+        // display
+        this.model = GameObject.Instantiate(go, pos, new Quaternion(0,0,0,0));
+    }
 }

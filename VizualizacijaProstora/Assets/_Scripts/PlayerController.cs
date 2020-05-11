@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 
     public CharacterController controller;
     public GameObject[] rooms;
+    public GameObject[] objects;
 
     float xRotation = 0f;
     float yRotation = 0f;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour {
         currentRoom = new SquareRoom();
         currentRoom.room_go = GameObject.Instantiate(rooms[1], currentRoom.location, Quaternion.Euler(-90, 0, 0));
         currentRoom.Display();
+        Destroy(currentRoom.model);
     }
 
     private void OnTriggerEnter(Collider other) {

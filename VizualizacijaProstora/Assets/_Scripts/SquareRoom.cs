@@ -41,6 +41,7 @@ public class SquareRoom : Room {
         room_go.transform.Rotate(new Vector3(1, 0, 0), -90);
 
         isActive = true;
+        GenerateObject();
     }
 
     /// <summary>
