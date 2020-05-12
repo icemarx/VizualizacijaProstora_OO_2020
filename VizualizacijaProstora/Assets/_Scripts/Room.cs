@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Room
 {
     // CONSTANTS
-    public readonly float EDGE_SIZE = 5;
+    public readonly float EDGE_SIZE = 6;
     public float angle;
 
     // ATTRIBUTES
