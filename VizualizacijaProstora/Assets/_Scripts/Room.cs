@@ -96,10 +96,14 @@ public abstract class Room
         // Vector3 pos = room_go.transform.position + new Vector3(0, 0.5f, 0);
         Vector3 pos = room_go.transform.position;
 
+        // Apply random rotation on y
+        float temp = UnityEngine.Random.rotation.eulerAngles.y;
+        Quaternion rot = Quaternion.Euler(new Vector3(0, temp, 0));
+
         // chose random object
         GameObject go = pc.objects[UnityEngine.Random.Range(0, pc.objects.Length)];
 
         // display
-        this.model = GameObject.Instantiate(go, pos, new Quaternion(0,0,0,0));
+        this.model = GameObject.Instantiate(go, pos, rot);
     }
 }
