@@ -190,7 +190,7 @@ PrefabInstance:
     - target: {fileID: 8183711001939449640, guid: f4ca5c382986b7c4cb6971b74e4153b5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4ca5c382986b7c4cb6971b74e4153b5, type: 3}
@@ -390,7 +390,7 @@ MonoBehaviour:
   - {fileID: 8183711001939449640, guid: f4ca5c382986b7c4cb6971b74e4153b5, type: 3}
   - {fileID: 1564455731153209007, guid: ceb485558d2e25649b2a811336ef9eb2, type: 3}
   objects:
-  - {fileID: 1300113518164655695, guid: dfc620ff2304d50429f4b2449ea42b34, type: 3}
+  - {fileID: 6978671248166366301, guid: 903c04e0941bad7469a515585e1e75a8, type: 3}
   - {fileID: 6122558002674846483, guid: 7f659f5af72042b4b9632284eba32220, type: 3}
   - {fileID: 7094279118667115382, guid: f239ced76391e47498a1b6031806c632, type: 3}
 --- !u!143 &963194230
