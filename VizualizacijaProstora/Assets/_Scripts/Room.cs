@@ -93,7 +93,8 @@ public abstract class Room
     /// </summary>
     protected void GenerateObject() {
         // generate position
-        Vector3 pos = room_go.transform.position + new Vector3(0, 0.5f, 0);
+        // Vector3 pos = room_go.transform.position + new Vector3(0, 0.5f, 0);
+        Vector3 pos = room_go.transform.position;
 
         // chose random object
         GameObject go = pc.objects[UnityEngine.Random.Range(0, pc.objects.Length)];
