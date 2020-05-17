@@ -22,7 +22,7 @@ public abstract class Room
 
     // METHODS
     /// <summary>
-    /// Shows all neighbors and hides non-neighboring rooms
+    /// Shows all neighbors and hides doors of this room
     /// </summary>
     public void ShowNeighbors() {
         for(int i = 0; i < Neighbors.Length; i++) {
@@ -50,16 +50,34 @@ public abstract class Room
                 Neighbors[i].Display();
             }
         }
+
+        // hide doors of current room
+        SetDoorsActive(this, false);
     }
 
     /// <summary>
-    /// Hides all neighboring rooms except for the one provided 
+    /// Sets the room's doors active or inactive.
+    /// </summary>
+    /// <param name="r">Room that will be interracted with</param>
+    /// <param name="active">True if the doors should be visible, false if they should be invisible</param>
+    private void SetDoorsActive(Room r, bool active) {
+        int numChilds = r.room_go.transform.childCount;
+        for (int c = 0; c < numChilds; c++) {
+            r.room_go.transform.GetChild(c).gameObject.SetActive(active);
+        }
+    }
+
+    /// <summary>
+    /// Hides all neighboring rooms except for the one provided as well as displays doors to this room
     /// </summary>
     /// <param name="room"></param>
     public void HideNeighborsExcept(Room room) {
         foreach (Room r in Neighbors) {
             if (r != null && r.isActive && r != room) r.Hide();
         }
+
+        // display doors of this room
+        SetDoorsActive(this, true);
     }
 
     /// <summary>
