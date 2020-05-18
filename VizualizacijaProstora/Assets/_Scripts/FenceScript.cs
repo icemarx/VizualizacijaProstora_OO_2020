@@ -22,8 +22,14 @@ public class FenceScript : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player")) {
-            this.transform.position = new Vector3(this.transform.position.x, (0.00027f - 0.5f*(1f - (other.transform.position.x - this.transform.position.x) / 0.02f)), this.transform.position.z);
-            //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -0.005f);
+            Vector3 myPos = new Vector3(this.transform.position.x, 0f, this.transform.position.z);
+            Vector3 playerPos = new Vector3(other.transform.position.x, 0f, other.transform.position.z);
+            float dist = (playerPos - myPos).magnitude;
+            float radius = 2f;
+            float factor = dist / radius;
+            factor = factor < 0f ? 0f : factor;
+            factor = factor > 1f ? 1f : factor;
+            this.transform.position = new Vector3(this.transform.position.x, (initH - 2.5f*(1f - factor)), this.transform.position.z);
         }
     }
 

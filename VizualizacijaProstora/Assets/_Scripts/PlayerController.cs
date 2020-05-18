@@ -37,7 +37,9 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         // Debug.Log("Trigger");
-        foreach(Room r in currentRoom.Neighbors) {
+        if (other.CompareTag("Fence"))
+            return;
+        foreach (Room r in currentRoom.Neighbors) {
             if(r != null && r.room_go == other.gameObject) {
                 previousRoom = currentRoom;
                 currentRoom = r;
@@ -49,7 +51,8 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerExit(Collider other) {
         // Debug.Log("Trigger end");
-        
+        if (other.CompareTag("Fence"))
+            return;
         if (currentRoom.room_go == other.gameObject) {
             Room r = currentRoom;
             currentRoom = previousRoom;

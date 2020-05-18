@@ -61,6 +61,7 @@ public abstract class Room
     /// <param name="r">Room that will be interracted with</param>
     /// <param name="active">True if the doors should be visible, false if they should be invisible</param>
     private void SetDoorsActive(Room r, bool active) {
+        return; // this method is no longer needed because the doors work differently
         int numChilds = r.room_go.transform.childCount;
         for (int c = 0; c < numChilds; c++) {
             r.room_go.transform.GetChild(c).gameObject.SetActive(active);
@@ -123,6 +124,8 @@ public abstract class Room
 
         // display
         this.model = GameObject.Instantiate(go, pos, rot);
+        this.model.transform.localScale = this.model.transform.localScale * 0.5f;
+        this.model.transform.position += Vector3.up * 0.2f;
     }
 
     /// <summary>
