@@ -36,7 +36,7 @@ public class SquareRoom : Room {
             exit_dir[i] = Vector3.Normalize(Quaternion.Euler(0, angle, 0) * exit_dir[i - 1]);
         }
 
-        room_go = GameObject.Instantiate(pc.rooms[1], location, new Quaternion(0,0,0,0));
+        room_go = GameObject.Instantiate(RandomRoomGO(pc.squareRooms), location, new Quaternion(0,0,0,0));
         room_go.transform.LookAt(neighbor.room_go.transform);
         room_go.transform.Rotate(new Vector3(1, 0, 0), -90);
 

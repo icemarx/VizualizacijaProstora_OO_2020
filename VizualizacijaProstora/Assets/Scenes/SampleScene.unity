@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -312,9 +312,18 @@ MonoBehaviour:
   rotSpeed: 50
   movSpeed: 2
   controller: {fileID: 963194230}
-  rooms:
-  - {fileID: 5982355959279058366, guid: fd10f0676ea8628469e49eca08cbf6c1, type: 3}
-  - {fileID: 1958814992587864991, guid: 2cba6ae9d45b1104cb1f03068d1e7d18, type: 3}
+  triangleRooms:
+  - {fileID: 2448788752781582977, guid: 895ca359e618ad14f925ad42ee3c9e1e, type: 3}
+  - {fileID: 8031804109485553942, guid: 23f879b1baf550c4dbf944fdb92b7bd1, type: 3}
+  - {fileID: 4048004073968688156, guid: 39c84a1895198884885cc43ad130a2d2, type: 3}
+  - {fileID: 1147278389949148901, guid: 4b4c92ab8adae4f47b5a04da0075167c, type: 3}
+  - {fileID: 8701570418066431754, guid: 98d25df22c16c6a499a90aac15c92a1d, type: 3}
+  squareRooms:
+  - {fileID: 1958814992587864991, guid: 89db6c08ddf2cf84f8f7ac455c5b81fc, type: 3}
+  - {fileID: 1958814992587864991, guid: 2b53c0cb747187444bda05fe6613ae25, type: 3}
+  - {fileID: 1958814992587864991, guid: b994aacec0e110148978891a664d8280, type: 3}
+  - {fileID: 1958814992587864991, guid: d431b8636fe4c2b4b8f6508f9443c8c7, type: 3}
+  - {fileID: 1958814992587864991, guid: b08dc659690a66d47b4154b35cd8fcc7, type: 3}
   objects:
   - {fileID: 6978671248166366301, guid: 903c04e0941bad7469a515585e1e75a8, type: 3}
   - {fileID: 6122558002674846483, guid: 7f659f5af72042b4b9632284eba32220, type: 3}

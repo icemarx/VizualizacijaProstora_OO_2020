@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour {
     public float movSpeed;
 
     public CharacterController controller;
-    public GameObject[] rooms;
+    public GameObject[] triangleRooms;
+    public GameObject[] squareRooms;
     public GameObject[] objects;
 
     float xRotation = 0f;
@@ -21,8 +22,14 @@ public class PlayerController : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
 
         // generate first room
-        currentRoom = new SquareRoom();
-        currentRoom.room_go = GameObject.Instantiate(rooms[1], currentRoom.location, Quaternion.Euler(-90, 0, 0));
+        if (UnityEngine.Random.Range(0, 2) == 0) {
+            // causes errors - fix
+            currentRoom = new TriangleRoom();
+            currentRoom.room_go = GameObject.Instantiate(currentRoom.RandomRoomGO(triangleRooms), currentRoom.location, Quaternion.Euler(-90, 0, 0));
+        } else {
+            currentRoom = new SquareRoom();
+            currentRoom.room_go = GameObject.Instantiate(currentRoom.RandomRoomGO(squareRooms), currentRoom.location, Quaternion.Euler(-90, 0, 0));
+        }
         currentRoom.Display();
         Destroy(currentRoom.model);
         currentRoom.model = null;

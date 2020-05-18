@@ -124,4 +124,16 @@ public abstract class Room
         // display
         this.model = GameObject.Instantiate(go, pos, rot);
     }
+
+    /// <summary>
+    /// Chooses a random room Game Object from a chosen array of GameObjects in PlayerController.
+    /// </summary>
+    /// <param name="rooms">Non-empty Array of room GameObjects with potential rooms to choose from</param>
+    /// <returns>Randomly chosen room or null if there are no rooms provided</returns>
+    public GameObject RandomRoomGO(GameObject[] rooms) {
+        if (rooms == null || rooms.Length == 0) return null;
+
+        int i = UnityEngine.Random.Range(0, rooms.Length);
+        return rooms[i];
+    }
 }
