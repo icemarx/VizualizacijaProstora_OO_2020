@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         // generate first room
         if (UnityEngine.Random.Range(0, 2) == 0) {
