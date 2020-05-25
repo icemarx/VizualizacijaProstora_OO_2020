@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,3 +53,4 @@ public class SquareRoom : Room {
         return EDGE_SIZE*0.5f;
     }
 }
+*/

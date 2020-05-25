@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour {
     float xRotation = 0f;
     float yRotation = 0f;
 
-    private GameObject currentRoom;
-    private GameObject previousRoom;
+    public GameObject currentRoom = null;
+    public GameObject previousRoom = null;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -38,22 +38,36 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         // Debug.Log("Trigger");
-        if (other.CompareTag("Fence")) return;
+        if (other.CompareTag("Room")) {
+            GameObject[] neighbors = currentRoom.GetComponent<Room2>().Neighbors;
 
-        foreach (Room r in currentRoom.Neighbors) {
-            if(r != null && r.room_go == other.gameObject) {
-                previousRoom = currentRoom;
-                currentRoom = r;
-                break;
+            foreach (GameObject r in neighbors) {
+                if (r != null && r == other.gameObject) {
+                    previousRoom = currentRoom;
+                    currentRoom = r;
+                    break;
+                }
+            }
+
+            ShowNeighbors(currentRoom);
+        }
+    }
+
+    private void ShowNeighbors(GameObject room) {
+        GameObject[] neighbors = currentRoom.GetComponent<Room2>().Neighbors;
+
+        foreach (GameObject r in neighbors) {
+            if (r != null) {
+                r.SetActive(true);
             }
         }
-        currentRoom.ShowNeighbors();
     }
+
 
     private void OnTriggerExit(Collider other) {
         // Debug.Log("Trigger end");
         if (other.CompareTag("Fence")) return;
-
+        /*
         if (currentRoom.room_go == other.gameObject) {
             Room r = currentRoom;
             currentRoom = previousRoom;
@@ -61,6 +75,7 @@ public class PlayerController : MonoBehaviour {
         }
         
         previousRoom.HideNeighborsExcept(currentRoom);
+        */
     }
 
     void LateUpdate() {

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -53,3 +53,4 @@ public class TriangleRoom : Room {
         return EDGE_SIZE * Mathf.Sqrt(3) / 6f;
     }
 }
+*/
