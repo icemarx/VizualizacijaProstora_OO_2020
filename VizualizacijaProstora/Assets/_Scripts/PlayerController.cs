@@ -8,20 +8,19 @@ public class PlayerController : MonoBehaviour {
     public float movSpeed;
 
     public CharacterController controller;
-    public GameObject[] triangleRooms;
-    public GameObject[] squareRooms;
     public GameObject[] objects;
 
     float xRotation = 0f;
     float yRotation = 0f;
 
-    private Room currentRoom;
-    private Room previousRoom;
+    private GameObject currentRoom;
+    private GameObject previousRoom;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        /*
         // generate first room
         if (UnityEngine.Random.Range(0, 2) == 0) {
             // causes errors - fix
@@ -34,12 +33,13 @@ public class PlayerController : MonoBehaviour {
         currentRoom.Display();
         Destroy(currentRoom.model);
         currentRoom.model = null;
+        */
     }
 
     private void OnTriggerEnter(Collider other) {
         // Debug.Log("Trigger");
-        if (other.CompareTag("Fence"))
-            return;
+        if (other.CompareTag("Fence")) return;
+
         foreach (Room r in currentRoom.Neighbors) {
             if(r != null && r.room_go == other.gameObject) {
                 previousRoom = currentRoom;
@@ -52,8 +52,8 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerExit(Collider other) {
         // Debug.Log("Trigger end");
-        if (other.CompareTag("Fence"))
-            return;
+        if (other.CompareTag("Fence")) return;
+
         if (currentRoom.room_go == other.gameObject) {
             Room r = currentRoom;
             currentRoom = previousRoom;
