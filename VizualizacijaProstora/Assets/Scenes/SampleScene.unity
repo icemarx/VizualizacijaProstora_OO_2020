@@ -586,6 +586,8 @@ MonoBehaviour:
   - {fileID: 6978671248166366301, guid: 903c04e0941bad7469a515585e1e75a8, type: 3}
   - {fileID: 6122558002674846483, guid: 7f659f5af72042b4b9632284eba32220, type: 3}
   - {fileID: 7094279118667115382, guid: f239ced76391e47498a1b6031806c632, type: 3}
+  currentRoom: {fileID: 1940325522}
+  previousRoom: {fileID: 0}
 --- !u!143 &963194230
 CharacterController:
   m_ObjectHideFlags: 0

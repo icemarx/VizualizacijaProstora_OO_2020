@@ -19,25 +19,11 @@ public class PlayerController : MonoBehaviour {
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        /*
-        // generate first room
-        if (UnityEngine.Random.Range(0, 2) == 0) {
-            // causes errors - fix
-            currentRoom = new TriangleRoom();
-            currentRoom.room_go = GameObject.Instantiate(currentRoom.RandomRoomGO(triangleRooms), currentRoom.location, Quaternion.Euler(-90, 0, 0));
-        } else {
-            currentRoom = new SquareRoom();
-            currentRoom.room_go = GameObject.Instantiate(currentRoom.RandomRoomGO(squareRooms), currentRoom.location, Quaternion.Euler(-90, 0, 0));
-        }
-        currentRoom.Display();
-        Destroy(currentRoom.model);
-        currentRoom.model = null;
-        */
     }
 
     private void OnTriggerEnter(Collider other) {
         // Debug.Log("Trigger");
+
         if (other.CompareTag("Room")) {
             GameObject[] neighbors = currentRoom.GetComponent<Room2>().Neighbors;
 
@@ -63,21 +49,33 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-
     private void OnTriggerExit(Collider other) {
         // Debug.Log("Trigger end");
-        if (other.CompareTag("Fence")) return;
-        /*
-        if (currentRoom.room_go == other.gameObject) {
-            Room r = currentRoom;
-            currentRoom = previousRoom;
-            previousRoom = r;
+
+        if (other.CompareTag("Room")) {
+            if (currentRoom == other.gameObject) {
+                GameObject r = currentRoom;
+                currentRoom = previousRoom;
+                previousRoom = r;
+            }
+            
+            HideNeighborsOfExcept(previousRoom, currentRoom);
+
         }
-        
-        previousRoom.HideNeighborsExcept(currentRoom);
-        */
     }
 
+    private void HideNeighborsOfExcept(GameObject room, GameObject exceptionRoom) {
+        GameObject[] neighbors = room.GetComponent<Room2>().Neighbors;
+
+        foreach (GameObject r in neighbors) {
+            if (r != null && r != exceptionRoom) {
+                r.SetActive(false);
+            }
+        }
+    }
+
+
+    // ================ MOVEMENT ETC. ================ //
     void LateUpdate() {
         RotatePlayer();
         MovePlayer();
