@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour {
     public float movSpeed;
 
     public CharacterController controller;
-    public GameObject[] objects;
 
     float xRotation = 0f;
     float yRotation = 0f;

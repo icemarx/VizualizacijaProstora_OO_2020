@@ -225,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 211950583623912215, guid: c5d98c10954a750459938cda994e94a8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8598333615777947868, guid: c5d98c10954a750459938cda994e94a8,
         type: 3}
@@ -319,8 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Neighbors:
-  - {fileID: 1940325522}
-  - {fileID: 732643664}
+  - {fileID: 354811329}
 --- !u!1001 &281264350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -341,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 4289824568676457632, guid: 9b57643acb59b3d4c8a3f76be91f553c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.01
+      value: 8.98
       objectReference: {fileID: 0}
     - target: {fileID: 4289824568676457632, guid: 9b57643acb59b3d4c8a3f76be91f553c,
         type: 3}
@@ -398,6 +397,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square_Room_V4 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8840031946104679875, guid: 9b57643acb59b3d4c8a3f76be91f553c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b57643acb59b3d4c8a3f76be91f553c, type: 3}
 --- !u!4 &281264351 stripped
@@ -425,7 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Neighbors:
-  - {fileID: 4376592070206454429}
+  - {fileID: 1940325522}
 --- !u!1 &309205751
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +481,7 @@ PrefabInstance:
     - target: {fileID: 4289824568676457632, guid: 9b57643acb59b3d4c8a3f76be91f553c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.59
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 4289824568676457632, guid: 9b57643acb59b3d4c8a3f76be91f553c,
         type: 3}
@@ -544,6 +548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square_Room_V4 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8840031946104679875, guid: 9b57643acb59b3d4c8a3f76be91f553c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b57643acb59b3d4c8a3f76be91f553c, type: 3}
 --- !u!4 &354811328 stripped
@@ -571,7 +580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Neighbors:
-  - {fileID: 4376592070206454429}
+  - {fileID: 230133776}
+  - {fileID: 281264352}
 --- !u!1001 &361542830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -910,7 +920,7 @@ MonoBehaviour:
   - {fileID: 6122558002674846483, guid: 7f659f5af72042b4b9632284eba32220, type: 3}
   - {fileID: 7094279118667115382, guid: f239ced76391e47498a1b6031806c632, type: 3}
   currentRoom: {fileID: 1940325522}
-  previousRoom: {fileID: 0}
+  previousRoom: {fileID: 1940325522}
 --- !u!143 &963194230
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1073,7 +1083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Neighbors:
-  - {fileID: 4376592070206454429}
+  - {fileID: 1940325522}
+  - {fileID: 354811329}
 --- !u!1001 &1495922075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1476,6 +1487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Neighbors:
   - {fileID: 4376592070206454429}
+  - {fileID: 1434667444}
 --- !u!1 &2008573351 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 211950583623912215, guid: c5d98c10954a750459938cda994e94a8,
