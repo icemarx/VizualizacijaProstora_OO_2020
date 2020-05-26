@@ -7960,7 +7960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &406220422
 Transform:
   m_ObjectHideFlags: 0
@@ -12952,6 +12952,7 @@ Transform:
   m_Children:
   - {fileID: 1221997158}
   - {fileID: 779625978}
+  - {fileID: 4405123887655814}
   - {fileID: 1307094905}
   - {fileID: 927290882}
   - {fileID: 659934295}
@@ -12962,7 +12963,6 @@ Transform:
   - {fileID: 521729250}
   - {fileID: 1131803546}
   - {fileID: 1311426991}
-  - {fileID: 4405123887655814}
   - {fileID: 2022150162}
   - {fileID: 60160947}
   - {fileID: 2116411638}
@@ -13117,6 +13117,7 @@ Transform:
   - {fileID: 1287604018}
   - {fileID: 1474896261}
   - {fileID: 1350488564}
+  - {fileID: 2544372995408852530}
   - {fileID: 24021530}
   - {fileID: 478069923}
   - {fileID: 1473632231}
@@ -13125,7 +13126,6 @@ Transform:
   - {fileID: 2061524617}
   - {fileID: 1986411295}
   - {fileID: 1334958725}
-  - {fileID: 2544372995408852530}
   - {fileID: 175912289}
   - {fileID: 1415826680}
   - {fileID: 110509811}
@@ -15830,7 +15830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &926035803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27090,7 +27090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1471495533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28373,7 +28373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1551668219
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33684,7 +33684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1818329665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39173,7 +39173,7 @@ Transform:
   m_Children:
   - {fileID: 658930132}
   m_Father: {fileID: 776147885}
-  m_RootOrder: 12
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -0.279, y: -178.61101, z: 0.141}
 --- !u!23 &23429638821728360
 MeshRenderer:
@@ -39885,7 +39885,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 776147885}
-  m_RootOrder: 175
+  m_RootOrder: 167
   m_LocalEulerAnglesHint: {x: 0.141, y: 91.39001, z: 0.279}
 --- !u!65 &2751560282436329579
 BoxCollider:
@@ -40798,7 +40798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7899174027297765452
 MonoBehaviour:
   m_ObjectHideFlags: 0
