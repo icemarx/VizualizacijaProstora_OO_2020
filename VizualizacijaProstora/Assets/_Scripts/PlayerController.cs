@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        // Debug.Log("Trigger");
+        Debug.Log("Trigger");
 
         if (other.CompareTag("Room")) {
             GameObject[] neighbors = currentRoom.GetComponent<Room2>().Neighbors;
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerExit(Collider other) {
-        // Debug.Log("Trigger end");
+        Debug.Log("Trigger end");
 
         if (other.CompareTag("Room")) {
             if (currentRoom == other.gameObject) {
