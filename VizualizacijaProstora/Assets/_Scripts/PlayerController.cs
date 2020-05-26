@@ -104,6 +104,9 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 move_dir = Vector3.Normalize(rightwards * x + forwards * z);
 
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            move_dir *= 2;
+
         controller.Move(move_dir * movSpeed * Time.deltaTime);
     }
 

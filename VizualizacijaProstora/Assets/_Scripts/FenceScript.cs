@@ -29,7 +29,7 @@ public class FenceScript : MonoBehaviour
             float factor = dist / radius;
             factor = factor < 0f ? 0f : factor;
             factor = factor > 1f ? 1f : factor;
-            this.transform.position = new Vector3(this.transform.position.x, (initH - this.transform.lossyScale.z * 2f*(1f - factor)), this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, (initH - this.transform.lossyScale.z*1.2f*(1f - factor)), this.transform.position.z);
         }
     }
 
