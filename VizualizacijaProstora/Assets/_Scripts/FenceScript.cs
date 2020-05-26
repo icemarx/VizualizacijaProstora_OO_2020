@@ -6,11 +6,14 @@ public class FenceScript : MonoBehaviour
 {
 
     private float initH = 0f;
+    private float radius = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
         initH = this.transform.position.y;
+        SphereCollider sc = this.GetComponent<SphereCollider>();
+        radius = sc.radius;
     }
 
     // Update is called once per frame
@@ -25,7 +28,6 @@ public class FenceScript : MonoBehaviour
             Vector3 myPos = new Vector3(this.transform.position.x, 0f, this.transform.position.z);
             Vector3 playerPos = new Vector3(other.transform.position.x, 0f, other.transform.position.z);
             float dist = (playerPos - myPos).magnitude;
-            float radius = 2f;
             float factor = dist / radius;
             factor = factor < 0f ? 0f : factor;
             factor = factor > 1f ? 1f : factor;

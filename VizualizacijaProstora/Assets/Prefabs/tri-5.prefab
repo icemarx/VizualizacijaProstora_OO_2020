@@ -194,17 +194,17 @@ PrefabInstance:
     - target: {fileID: 7756564917407659807, guid: 1b17f9d6b87feea46ae6c415081346fb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 7756564917407659807, guid: 1b17f9d6b87feea46ae6c415081346fb,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.40000054
+      value: 0.004000005
       objectReference: {fileID: 0}
     - target: {fileID: 7756564917407659807, guid: 1b17f9d6b87feea46ae6c415081346fb,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.48000082
+      value: 0.004800008
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b17f9d6b87feea46ae6c415081346fb, type: 3}
@@ -284,17 +284,17 @@ PrefabInstance:
     - target: {fileID: 7756564917407659807, guid: 1b17f9d6b87feea46ae6c415081346fb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4000012
+      value: 0.004000012
       objectReference: {fileID: 0}
     - target: {fileID: 7756564917407659807, guid: 1b17f9d6b87feea46ae6c415081346fb,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.40000102
+      value: 0.00400001
       objectReference: {fileID: 0}
     - target: {fileID: 7756564917407659807, guid: 1b17f9d6b87feea46ae6c415081346fb,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.48000136
+      value: 0.004800014
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b17f9d6b87feea46ae6c415081346fb, type: 3}
@@ -374,17 +374,17 @@ PrefabInstance:
     - target: {fileID: 7756564917407659807, guid: 1b17f9d6b87feea46ae6c415081346fb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.40000013
+      value: 0.004000001
       objectReference: {fileID: 0}
     - target: {fileID: 7756564917407659807, guid: 1b17f9d6b87feea46ae6c415081346fb,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4000008
+      value: 0.004000008
       objectReference: {fileID: 0}
     - target: {fileID: 7756564917407659807, guid: 1b17f9d6b87feea46ae6c415081346fb,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.48000103
+      value: 0.00480001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b17f9d6b87feea46ae6c415081346fb, type: 3}
