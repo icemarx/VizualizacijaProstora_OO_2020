@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Trigger");
+        // Debug.Log("Trigger");
 
         if (other.CompareTag("Room")) {
             GameObject[] neighbors = currentRoom.GetComponent<Room2>().Neighbors;
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerExit(Collider other) {
-        Debug.Log("Trigger end");
+        // Debug.Log("Trigger end");
 
         if (other.CompareTag("Room")) {
             if (currentRoom == other.gameObject) {
@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour {
 
     // ================ MOVEMENT ETC. ================ //
     void Update() {
+        Debug.Log(controller.velocity);
         if (controller.velocity.magnitude > 2f && !audioSource.isPlaying && f_delay >= FOOTSTEP_DELAY) {
             audioSource.volume = UnityEngine.Random.Range(.8f, 1);
             audioSource.pitch  = UnityEngine.Random.Range(.9f, 1.1f);
@@ -121,11 +122,10 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             move_dir *= 2;
 
-        controller.Move(move_dir * movSpeed * Time.deltaTime);
-
         player_velocity.y += gravity * Time.deltaTime;
-
         controller.Move(player_velocity * Time.deltaTime);
+
+        controller.Move(move_dir * movSpeed * Time.deltaTime);
     }
 
     void RotatePlayer() {
