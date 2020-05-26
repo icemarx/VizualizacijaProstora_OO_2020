@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour {
 
     // ================ MOVEMENT ETC. ================ //
     void Update() {
-        Debug.Log(controller.velocity);
+
         if (controller.velocity.magnitude > 2f && !audioSource.isPlaying && f_delay >= FOOTSTEP_DELAY) {
             audioSource.volume = UnityEngine.Random.Range(.8f, 1);
             audioSource.pitch  = UnityEngine.Random.Range(.9f, 1.1f);
