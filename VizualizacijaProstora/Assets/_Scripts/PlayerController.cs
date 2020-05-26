@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
     public float movSpeed;
 
     public CharacterController controller;
-    public AudioSource audio;
+    public AudioSource audioSource;
     public readonly int FOOTSTEP_DELAY = 42;
     private int f_delay = 0; 
 
@@ -87,11 +87,11 @@ public class PlayerController : MonoBehaviour {
 
     // ================ MOVEMENT ETC. ================ //
     void Update() {
-        if (controller.velocity.magnitude > 2f && !audio.isPlaying && f_delay >= FOOTSTEP_DELAY) {
-            audio.volume = UnityEngine.Random.Range(.8f, 1);
-            audio.pitch  = UnityEngine.Random.Range(.9f, 1.1f);
+        if (controller.velocity.magnitude > 2f && !audioSource.isPlaying && f_delay >= FOOTSTEP_DELAY) {
+            audioSource.volume = UnityEngine.Random.Range(.8f, 1);
+            audioSource.pitch  = UnityEngine.Random.Range(.9f, 1.1f);
 
-            audio.Play();
+            audioSource.Play();
             f_delay = 0;
         }
 

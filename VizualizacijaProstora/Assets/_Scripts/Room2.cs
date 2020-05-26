@@ -13,4 +13,14 @@ public class Room2 : MonoBehaviour {
     /// 5. Null values among neighbors are handled
     /// </summary>
     public GameObject[] Neighbors;
+
+    public Material skybox;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (skybox != null && other.CompareTag("Player")) {
+            RenderSettings.skybox = skybox;
+        }
+    }
+
 }
