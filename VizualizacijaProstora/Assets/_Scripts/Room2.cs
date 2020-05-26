@@ -16,11 +16,22 @@ public class Room2 : MonoBehaviour {
 
     public Material skybox;
 
+    public GameObject[] gm;
+    public bool[] setactive;
+
     private void OnTriggerEnter(Collider other)
     {
         if (skybox != null && other.CompareTag("Player")) {
             RenderSettings.skybox = skybox;
         }
+
+        if (gm != null && gm.Length > 0 && other.CompareTag("Player"))
+        {
+            for (int i = 0; i < gm.Length; i++) {
+                gm[i].SetActive(setactive[i]);
+            }
+        }
+
     }
 
 }
