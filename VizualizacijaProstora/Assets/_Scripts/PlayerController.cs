@@ -15,6 +15,14 @@ public class PlayerController : MonoBehaviour {
     float xRotation = 0f;
     float yRotation = 0f;
 
+    Vector3 player_velocity;
+    public float gravity = -9.81f;
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+    private bool isGrounded;
+
+
     public GameObject currentRoom = null;
     public GameObject previousRoom = null;
 
@@ -99,6 +107,12 @@ public class PlayerController : MonoBehaviour {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if(isGrounded && player_velocity.y < 0) {
+            player_velocity.y = -2f;
+        }
+
         Vector3 forwards   = new Vector3(transform.forward.x, 0, transform.forward.z);
         Vector3 rightwards = new Vector3(transform.right.x,   0, transform.right.z  );
 
@@ -108,6 +122,10 @@ public class PlayerController : MonoBehaviour {
             move_dir *= 2;
 
         controller.Move(move_dir * movSpeed * Time.deltaTime);
+
+        player_velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(player_velocity * Time.deltaTime);
     }
 
     void RotatePlayer() {
